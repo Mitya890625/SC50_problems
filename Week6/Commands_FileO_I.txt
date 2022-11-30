@@ -1,0 +1,12 @@
+import csv
+reader = scv.reader(file)
+
+#открытие файла и запись в него
+with open("file_name.txt", 'a') as file:
+	file.write(f"{variable}")
+#чтение файла
+with open("file_name.txt", "r") as file:
+	lines = file.readlines()
+for line in lines:
+	print("Hello, ", line)
+

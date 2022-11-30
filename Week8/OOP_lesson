@@ -1,0 +1,31 @@
+class Animal:
+    def __init__(self, name, action):
+        self.name = name
+        self.action = action
+    def __str__(self):
+        return f"{self.name} says {self.action}"
+@property
+def name(self):
+    return name
+@name.setter
+def name(self, name):
+    self._name = name
+
+def main():
+    animal = get_animal()
+    print(animal)
+
+
+def get_animal():
+    name = input("type of your pet: ")
+    if name == "cat":
+        action = "Miay"
+    elif name == "dog":
+        action = "woof"
+    return Animal(name, action)
+
+
+
+if __name__ == "__main__":
+    main()
+ 
