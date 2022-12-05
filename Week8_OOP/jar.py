@@ -1,17 +1,16 @@
 class Jar:
     def __init__(self, capacity):
         self.capacity = capacity
+        self.size = 0
 
     def __str__(self):
-        return "c" * self.capacity
+        return "c" * self.size
 
     def deposit(self, n):
-        amount = self.__str__()
-        return amount.__add__(n*"c")
+       self.size += n
 
     def withdraw(self, n):
-        amount = self.__str__()
-        return amount.remove(n*"c")
+        self.size -= n
 '''
     @property
     def capacity(self):
@@ -22,14 +21,13 @@ class Jar:
         ...
 '''
 def main():
-    #cookie = Jar(6)
-    #print(cookie)
-    #cookie = cookie.deposit(3)
-    #print(cookie)
-    #cookie = cookie.withdraw(6)
-    #print(cookie)
-    str_1 = "cccc"
-    new_str = str_1.replace(str_1, )
+    cookie = Jar(12)
+    cookie.deposit(5)
+    cookie.withdraw(3)
+    print(cookie)
+    
+    
+
 
 if __name__=="__main__":
     main()
