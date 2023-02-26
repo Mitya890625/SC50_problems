@@ -1,4 +1,4 @@
-import re, sys
+import re, sys #import required libraries
 
 def main():
     print(convert(input("Hours: ")))
@@ -7,12 +7,12 @@ def main():
 
 def convert(s):
     if ':' in s:
-        matches_1 = re.search(r"((\d)?\d:(\d\d)?) am", s)
-        hours_am, minutes_am = matches_1.group(1).split(":")
+        matches_1 = re.search(r"((\d)?\d:(\d\d)?) am", s) #checking input and seeking pattern
+        hours_am, minutes_am = matches_1.group(1).split(":") #assigning variables value of hours and minutes
         matches_2 = re.search(r"((\d)?\d:(\d\d)?) pm", s)
         hours_pm, minutes_pm = matches_2.group(1).split(":")
-        hours_pm = int(hours_pm) + 12
-        new_str_1 = re.sub(r"((\d)?\d:\d\d) am", f"{hours_am}:{minutes_am}", s)
+        hours_pm = int(hours_pm) + 12 #converting timeformat
+        new_str_1 = re.sub(r"((\d)?\d:\d\d) am", f"{hours_am}:{minutes_am}", s) #creating new line with in new time format
         new_str_2 = re.sub(r"((\d)?\d:\d\d) pm($)?", f"{hours_pm}:{minutes_pm}", new_str_1)
         return new_str_2
     else:
